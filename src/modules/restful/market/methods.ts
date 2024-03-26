@@ -37,7 +37,7 @@ export interface MarketMethods {
     oldTradeLookup(symbol: string, options?: oldTradeLookupOptions): Promise<oldTradeLookupResponse[]>;
     compressedAggregateTradesList(symbol: string, options?: compressedAggregateTradesListOptions): Promise<compressedAggregateTradesListResponse[]>;
     klineCandlestickData(symbol: string, interval: Interval, options?: klineCandlestickDataOptions): Promise<klineCandlestickDataResponse[]>;
-    uiklines(symbol: string, interval: Interval, options?: uiklinesOptions): Promise<uiklinesResponse[]>;
+    uiklines(symbol: string, interval: Interval, options?: uiklinesOptions): Promise<Response & {data: number[]}>;
     currentAveragePrice(symbol: string): Promise<currentAveragePriceResponse>;
     ticker24hr(options?: ticker24hrOptions): Promise<ticker24hrResponse | ticker24hrResponse[]>;
     symbolPriceTicker(options?: symbolPriceTickerOptions): Promise<symbolPriceTickerResponse | symbolPriceTickerResponse[]>;
